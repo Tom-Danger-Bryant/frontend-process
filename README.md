@@ -13,7 +13,7 @@ We have to account for the following eccentricities of our existing architecture
 
 ### Stack
 We use the following stack
-* Node.js
-* GraphQL
-* React
-* SASS (scss)
+* [Node.js](https://nodejs.org/en/docs/)
+* [GraphQL](https://graphql.org/learn/)
+* [React](https://reactjs.org/docs/getting-started.html)
+* [SASS](https://sass-lang.com/documentation/syntax)
