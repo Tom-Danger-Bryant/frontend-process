@@ -1,6 +1,8 @@
 # frontend-process
 This repo is intended for new devs to familiarize themselves with our front end dev processes. It uses a fictional scenario to illustrate the best way to approach building new components. 
 
+**Note: This code will not run as is (there is no build or module mgmt) it is just meant to serve as a guidline** 
+
 Important files in this repo will be accompanied with a `{{filename}}-README.MD` to explain their purpose and contents.
 
 ## Scenario
