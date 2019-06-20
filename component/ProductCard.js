@@ -1,7 +1,7 @@
 import React, {useState,useEffect} from 'react';
 import Icon from '@shared/Icon';
 
-const ProductCard = ({_id, name,price,description,image,soldOut,department,availableStock})=> {
+const ProductCard = ({_id, name,price,description,image,soldOut,department,availableStock,user: {currency}})=> {
     const [productAmt, setProductAmt] = useState(1);
     const [outOfStockBanner, setOutOfStockBanner] = useState(soldOut);
 
@@ -40,7 +40,7 @@ const ProductCard = ({_id, name,price,description,image,soldOut,department,avail
                 <p className='pd-Card_Desc'>{description}</p>
             </div> 
             <div className='pd-Card_Footer'>
-                <div className="pd-Card_Price">{`$${price * productAmt}.00`}</div>
+                <div className="pd-Card_Price">{`${currency}${price * productAmt}.00`}</div>
                 <div className="pd-Card_Count">{productAmt}</div>
                 <button className='pd-Card_Dec' onClick={removeProduct} />
                 <button className='pd-Card_Inc'onClick={addProduct} />

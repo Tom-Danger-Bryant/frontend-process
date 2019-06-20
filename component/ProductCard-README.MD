@@ -24,7 +24,9 @@ The hooks we use in this component are:
 *  `useEffect` for updating the `outOfStockBanner` if the product goes out of stock before the user can act
 
 ### Destructuring and Prop Massaging
-The container attached to this component already prepared the props for us, keeping the values as flat as possible. For this reason we did not need to massage or destruct.
+The container attached to this component already prepared the props for us, keeping the values as flat as possible. For this reason we did not need to massage or destruct much.
+
+
 Alternativley we could have passed the whole `product` object to this components props. We only need the `name`, `_id` and `details` from that object so function declaration would have looked like this (with destructuring) : 
 ``` 
 const ProductCard = ({product : {_id, name,description}, price,image,soldOut,department,availableStock})
