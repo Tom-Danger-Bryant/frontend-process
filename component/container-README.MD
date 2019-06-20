@@ -68,18 +68,19 @@ The `GET_PRODUCT` query in the container (which will have a paired GraphQL model
 
 Now this isn't total magic. On the backend two API calls are still being made (one to /product/{product_id} and another to /department/{department_id}). Putting this kind of work on to the backend is perfect though because our backend is in the same region as our database (faster API calls) and has a lot more resources than the users web browser. 
 
+#### Prop Massaging after Fetch
+GraphQL got us the information we needed, but it's still not in the best format. We want it to be as flat as possible before passing to the component. For this reason we have the `formatQuery` function.
+This function is pure and expects an object that looks like the graphql response. Using some fancy [destructuring assignment](https://javascript.info/destructuring-assignment) and renaming in the arguments we accomplish this. 
+
+In a more advanced destructure, we even rename a property to match the variable name of our expecting component `(remainingStock : availableStock)`
+
+Breaking out this function has made it easier to test. Making it pure also guarantees that our output will be the same given the same GraphQL response.
 
 
+## Extra Bits
+There are a few extra pieces to this container. 
+* <Route/> wrapper - Our application is controlled by [react-router](https://reacttraining.com/react-router/) this wrapper gives us URL information and operations incase we need them
+* mapStateToProps & mapDispatchToProps - These methods allow the component to read and write from the Redux State. This is how we pull the user object from the redux store and update the user object in the Redux state using `UpdateUserAction`.
+* `withRouter` & `connect` - These [Higher Order Components](`https://reactjs.org/docs/higher-order-components.html`) allow the <Route> and  mapStateToProps & mapDispatchToProps to work with react-router and redux.
 
-[Destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) helps remove extra logical lines checking for deeply nested properties. Destructuring won't prevent bugs, but the code will fail faster, meaning you'll catch them quicker.
-**As a general rule, the deeper the nest, the more bugs likey to pop up.**
 
-Without Destructuring you could massage the same props, which would look like this: 
-```
-const ProductCard = ({product, price,image,soldOut,department,availableStock}) => {
-    const name = product.name;
-    const _id = product._id;
-    const description = product.description;
-}
-```
-The example above is gross. Don't do it. 
