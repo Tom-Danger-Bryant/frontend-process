@@ -1,6 +1,6 @@
 # Bibliography
 
-* [Higher Order Components](`https://reactjs.org/docs/higher-order-components.html`) 
+* [Higher Order Components](https://reactjs.org/docs/higher-order-components.html) 
 * [react-router](https://reacttraining.com/react-router/) 
 * [Destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
 * [Also Destructuring assignment](https://javascript.info/destructuring-assignment)
