@@ -81,6 +81,6 @@ Breaking out this function has made it easier to test. Making it pure also guara
 There are a few extra pieces to this container. 
 * <Route/> wrapper - Our application is controlled by [react-router](https://reacttraining.com/react-router/) this wrapper gives us URL information and operations incase we need them
 * mapStateToProps & mapDispatchToProps - These methods allow the component to read and write from the Redux State. This is how we pull the user object from the redux store and update the user object in the Redux state using `UpdateUserAction`.
-* `withRouter` & `connect` - These [Higher Order Components](`https://reactjs.org/docs/higher-order-components.html`) allow the <Route> and  mapStateToProps & mapDispatchToProps to work with react-router and redux.
+* `withRouter` & `connect` - These [Higher Order Components](https://reactjs.org/docs/higher-order-components.html) allow the <Route> and  mapStateToProps & mapDispatchToProps to work with react-router and redux.
 
 
