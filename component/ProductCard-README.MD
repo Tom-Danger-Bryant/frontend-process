@@ -2,10 +2,10 @@
 This is a [presentational component](https://medium.com/@thejasonfile/dumb-components-and-smart-components-e7b33a698d43).
 ## Presentational Component Rules
 Devs should try to follow these guidelines, but they don't fit every scenario. 
-* When possible, make the component a [Pure Functional Component](https://logrocket.com/blog/pure-functional-components/). No side affects = no bugs
+* When possible, make the component a [Pure Functional Component](https://logrocket.com/blog/pure-functional-components/). No side affects = fewer bugs
 * If you need state, keep it a functional component and use [Hooks](https://reactjs.org/docs/hooks-overview.html)
 * Try to limit a file to one component. But if the component gets too big, break it into multiple components.
-* Destrcucture as much as possible, and keep props massaging to a minimum. If the props aren't in the right format, fix that from the parent. 
+* Destructuring as much as possible, and keep props massaging to a minimum. If the props aren't in the right format, fix that from the parent. 
 * Try to keep control of visual effects in `CSS` not `JS`. See the `aria-invalid` attribute on line 33. This is more performative. 
 
 
